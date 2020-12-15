@@ -22,6 +22,9 @@ let root = new Vue ({
       "https://static.photocdn.pt/images/articles/2017/04/28/iStock-546424192.jpg",
     ],
   },
+  created: function () {
+    setInterval(this.next, 3000);
+  },
   methods: {
     next(){
       this.indexImages++;
@@ -34,6 +37,7 @@ let root = new Vue ({
       if (this.indexImages < 0) {
         this.indexImages = this.images.length - 1;
       } 
-    }
+    },
+    
   }
 });
